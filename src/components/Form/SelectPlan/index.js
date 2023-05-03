@@ -18,7 +18,7 @@ const SelectPlan = () => {
 
   const [currentToggleValue, setCurrentToggleValue] = useState("month");
 
-  const [currentPlan, setCurrentPlan] = useState(null);
+  const [currentPlan, setCurrentPlan] = useState(availablePlan[0]);
 
   const handleSelectPlan = (data) => {
     console.log("data", data);
