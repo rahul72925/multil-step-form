@@ -1,0 +1,10 @@
+.home__form_personal_info_container {
+  width: 100%;
+  opacity: 1;
+  display: block;
+  transition: 0.3;
+}
+.personal__hidden {
+  opacity: 0;
+  display: none;
+}

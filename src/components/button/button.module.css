@@ -1,0 +1,10 @@
+._button {
+  cursor: pointer;
+  background-color: var(--Marine_blue);
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-width: 6rem;
+  color: var(--White);
+  font-weight: 600;
+}

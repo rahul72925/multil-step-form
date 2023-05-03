@@ -22,6 +22,11 @@ export const useMultiForm = create((set) => ({
       title: "Summary",
     },
   ],
-  updateForm: (data, key) => set(produce((state) => (state.form[key] = data))),
-  updateCurrentStep: (id) => set((state) => (state.currentStepId = id)),
+  updateForm: (data, key) =>
+    set(
+      produce((state) => {
+        state.form[key] = data;
+      })
+    ),
+  updateCurrentStep: (id) => set(() => ({ currentStepId: id })),
 }));

@@ -1,0 +1,45 @@
+.form_heading {
+  color: var(--Marine_blue);
+  font-size: 1.6em;
+}
+
+.form_subheading {
+  color: var(--Cool_gray);
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.form_button_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 5rem;
+}
+
+.form_button_group_go_back_btn {
+  padding: 1rem;
+  cursor: pointer;
+  color: var(--Cool_gray);
+  font-weight: 600;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .form_button_group {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--White);
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-family: Ubuntu;
+  }
+}
