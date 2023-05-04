@@ -60,7 +60,7 @@
   }
   .home__sider_container {
     display: grid;
-    grid-template-columns: repeat(4, 5rem);
+    grid-template-columns: repeat(4, 3.5rem);
     height: 6rem;
     align-items: center;
     justify-content: center;
