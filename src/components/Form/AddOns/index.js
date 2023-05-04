@@ -16,14 +16,15 @@ const AddOns = () => {
     state.updateForm,
   ]);
 
-  const [selectedAddOn, setSelectedAddOn] = useState(null);
+  const [selectedAddOn, setSelectedAddOn] = useState([]);
 
   const handleAddOnClick = (addOn) => {
-    if (addOn.id == selectedAddOn?.id) {
-      setSelectedAddOn(null);
-    } else {
-      setSelectedAddOn(addOn);
-    }
+    setSelectedAddOn((prev) => {
+      const found = prev.find((sao) => sao.id == addOn.id);
+      return found
+        ? prev.filter((sao) => sao.id !== addOn.id)
+        : prev.concat(addOn);
+    });
   };
 
   const handleSubmit = () => {
@@ -42,20 +43,23 @@ const AddOns = () => {
     >
       <Heading title={"Pick add-ons"} />
       <Subheading subTitle={"Add-ons help enhance your gaming experience."} />
-
       <div className={styles.addOns__list}>
         {availableAddOns.map((eachAddOn) => {
           return (
             <div
               className={classNames(styles.each_addOn, {
-                [styles.each_addOn_selected]: selectedAddOn?.id == eachAddOn.id,
+                [styles.each_addOn_selected]: !!selectedAddOn.find(
+                  (each) => each.id == eachAddOn.id
+                ),
               })}
               key={eachAddOn.id}
               onClick={() => handleAddOnClick(eachAddOn)}
             >
               <input
                 type="checkbox"
-                checked={selectedAddOn?.id == eachAddOn.id}
+                checked={
+                  !!selectedAddOn.find((each) => each.id == eachAddOn.id)
+                }
                 onChange={handleOnCheck}
               />
               <div>
