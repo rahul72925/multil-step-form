@@ -13,10 +13,12 @@ const SelectPlan = () => {
     state.currentStepId,
     state.updateCurrentStep,
   ]);
+  const [currentTiming, updateCurrentTiming] = useMultiForm((state) => [
+    state.currentTiming,
+    state.updateCurrentTiming,
+  ]);
 
   const updateForm = useMultiForm((state) => state.updateForm);
-
-  const [currentToggleValue, setCurrentToggleValue] = useState("month");
 
   const [currentPlan, setCurrentPlan] = useState(availablePlan[0]);
 
@@ -60,8 +62,8 @@ const SelectPlan = () => {
                 <span className={styles.each_plan_title}>{title}</span>
                 <br />
                 <span className={styles.each_plan_price}>
-                  ${price[currentToggleValue]}/
-                  {currentToggleValue == "month" ? "mo" : "yr"}
+                  ${price[currentTiming]}/
+                  {currentTiming == "month" ? "mo" : "yr"}
                 </span>
               </div>
             </div>
@@ -70,8 +72,8 @@ const SelectPlan = () => {
       </div>
       <Toggle
         options={toggleOptions}
-        setCurrentToggleValue={setCurrentToggleValue}
-        currentToggleValue={currentToggleValue}
+        setCurrentToggleValue={updateCurrentTiming}
+        currentToggleValue={currentTiming}
       />
       <ButtonGroup type="button" primaryButtonClick={primaryButtonClick} />
     </div>
