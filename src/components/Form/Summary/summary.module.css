@@ -1,0 +1,90 @@
+.summary_container {
+  width: 100%;
+  opacity: 1;
+  display: block;
+  transition: 0.3;
+}
+
+.summary_container_hidden {
+  display: none;
+  opacity: 0;
+}
+.summary_details {
+  margin-top: 2rem;
+}
+.form_details {
+  min-height: 4rem;
+  background-color: var(--Magnolia);
+  box-sizing: border-box;
+  padding: 1.175rem;
+  border-radius: 0.3rem;
+}
+
+.plan_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.875rem;
+  border-bottom: 1px solid var(--Light_gray);
+}
+
+.plan_title {
+  font-weight: 700;
+  color: var(--Marine_blue);
+}
+
+.plan_price {
+  font-weight: 700;
+  color: var(--Marine_blue);
+}
+
+.summary_addon_title {
+  color: var(--Cool_gray);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.summary_addon_price {
+  color: var(--Marine_blue);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.plan_change_button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  text-decoration: underline;
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
+  cursor: pointer;
+  color: var(--Cool_gray);
+  font-family: "Roboto", "Ubuntu";
+  font-weight: 500;
+}
+
+.summary_addon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.summary_total_container {
+  margin-top: 1rem;
+  padding: 1.175rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary_total_text {
+  color: var(--Cool_gray);
+  font-weight: 500;
+}
+
+.summary_total_price {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--Purplish_blue);
+}

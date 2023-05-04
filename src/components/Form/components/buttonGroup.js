@@ -6,6 +6,7 @@ const ButtonGroup = ({
   type = "submit",
   primaryButtonText = "Next Step",
   primaryButtonClick = () => {},
+  primaryButtonStyle = {},
 }) => {
   const currentStepId = useMultiForm((state) => state.currentStepId);
   const updateCurrentStep = useMultiForm((state) => state.updateCurrentStep);
@@ -15,9 +16,13 @@ const ButtonGroup = ({
   return (
     <div className={classNames(styles.form_button_group)}>
       {type == "submit" ? (
-        <Button>{primaryButtonText}</Button>
+        <Button style={primaryButtonStyle}>{primaryButtonText}</Button>
       ) : (
-        <Button type={type} onClick={primaryButtonClick}>
+        <Button
+          style={primaryButtonStyle}
+          type={type}
+          onClick={primaryButtonClick}
+        >
           {primaryButtonText}
         </Button>
       )}

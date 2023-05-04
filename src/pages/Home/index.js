@@ -1,4 +1,4 @@
-import { AddOns, PersonalInfo, SelectPlan } from "../../components";
+import { AddOns, PersonalInfo, SelectPlan, Summary } from "../../components";
 import { Sider } from "../../components/Sider";
 import { useMultiForm } from "../../stores";
 import styles from "./home.module.css";
@@ -17,6 +17,7 @@ const Home = () => {
           <PersonalInfo />
           <SelectPlan />
           <AddOns />
+          <Summary />
         </div>
       </div>
     </div>

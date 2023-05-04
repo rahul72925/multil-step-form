@@ -4,6 +4,7 @@ import { produce } from "immer";
 export const useMultiForm = create((set) => ({
   form: {},
   currentStepId: 1,
+  isFormSubmitted: false,
   currentTiming: "month",
   availableSteps: [
     {
@@ -31,4 +32,5 @@ export const useMultiForm = create((set) => ({
     ),
   updateCurrentStep: (id) => set(() => ({ currentStepId: id })),
   updateCurrentTiming: (time) => set(() => ({ currentTiming: time })),
+  updateSubmitForm: (val) => set(() => ({ isFormSubmitted: val })),
 }));
