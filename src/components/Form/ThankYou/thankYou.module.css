@@ -1,0 +1,27 @@
+.thank_you_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.thank_you_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.thank_you_content > h1 {
+  font-size: 1.5em;
+  color: var(--Marine_blue);
+}
+
+.thank_you_content > p {
+  text-align: center;
+  line-height: 1.5rem;
+  color: var(--Cool_gray);
+  font-weight: 500;
+}
