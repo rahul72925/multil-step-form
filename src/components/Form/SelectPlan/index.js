@@ -30,6 +30,11 @@ const SelectPlan = () => {
     updateForm(currentPlan, "plan");
     updateCurrentStep(3);
   };
+
+  if (currentStepId != 2) {
+    return null;
+  }
+
   return (
     <div
       className={classNames(styles.select_plan_container, {

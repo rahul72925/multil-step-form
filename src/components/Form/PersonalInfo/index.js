@@ -10,7 +10,10 @@ import { useMultiForm } from "../../../stores";
 import classNames from "classnames";
 
 const PersonalInfo = () => {
-  const updateForm = useMultiForm((state) => state.updateForm);
+  const [formData, updateForm] = useMultiForm((state) => [
+    state.form,
+    state.updateForm,
+  ]);
   const [currentStepId, updateCurrentStep] = useMultiForm((state) => [
     state.currentStepId,
     state.updateCurrentStep,
@@ -37,6 +40,11 @@ const PersonalInfo = () => {
     updateForm(values, "userInfo");
     updateCurrentStep(2);
   };
+
+  if (currentStepId != 1) {
+    return null;
+  }
+
   return (
     <div
       className={classNames(styles.home__form_personal_info_container, {
@@ -49,9 +57,9 @@ const PersonalInfo = () => {
       />
       <Formik
         initialValues={{
-          name: "",
-          email: "",
-          phoneNumber: "",
+          name: formData.userInfo?.name || "",
+          email: formData.userInfo?.email || "",
+          phoneNumber: formData.userInfo?.phoneNumber || "",
         }}
         validate={validate}
         onSubmit={onSubmit}

@@ -35,6 +35,11 @@ const AddOns = () => {
   };
 
   const handleOnCheck = () => {};
+
+  if (currentStepId != 3) {
+    return null;
+  }
+
   return (
     <div
       className={classNames(styles.addOns_container, {
